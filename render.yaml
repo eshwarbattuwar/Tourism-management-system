@@ -1,8 +1,10 @@
 services:
   - type: web
     name: travelmate-laravel
-    runtime: docker
-    dockerfilePath: ./Dockerfile
+    env: php
+    plan: free
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     envVars:
       - key: APP_ENV
         value: production
