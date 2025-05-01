@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: travelmate-laravel
+    env: php
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://your-app-name.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d09sksk9c44c73cn2i20-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: travel_website5
+      - key: DB_USERNAME
+        value: travel_website5_user
+      - key: DB_PASSWORD
+        value: z86dYkBk1hZ8Y07dpywOoJRrefA7FVBf 
